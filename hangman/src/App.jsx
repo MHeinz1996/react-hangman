@@ -5,6 +5,7 @@ import Input from './components/Input'
 import SubmitButton from './components/SubmitButton'
 import DisplayWord from './components/DisplayWord'
 import GuessedLetters from './components/GuessedLetters'
+import PlayAgain from './components/PlayAgain'
 
 function App() {
   const [puzzle, setPuzzle] = useState(WordList[(Math.floor(Math.random() * WordList.length))])
@@ -17,6 +18,7 @@ function App() {
       <DisplayWord puzzle={puzzle} guessedLetters={guessedLetters}/>
       <Input />
       <SubmitButton guessedLetters={guessedLetters} setGuessedLetters={setGuessedLetters}/>
+      <PlayAgain />
       <hr />
       <GuessedLetters puzzle={puzzle} guessedLetters={guessedLetters} />
     </div>

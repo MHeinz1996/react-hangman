@@ -15,6 +15,7 @@ function GuessedLetters({puzzle, guessedLetters}) {
     alert('You lose!')
     document.getElementById('input-field').hidden = true
     document.getElementById('submit-button').hidden = true
+    document.getElementById('play-again').hidden = false
   }
 
   return(
