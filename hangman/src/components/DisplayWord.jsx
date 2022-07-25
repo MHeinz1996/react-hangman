@@ -1,5 +1,8 @@
+import Confetti from './Confetti'
+
 function DisplayWord({puzzle, guessedLetters}) {
   let displayedWord = []
+  let celebrate = false
 
   for(let i=0; i<puzzle.length; i++) {
     if(guessedLetters.includes(puzzle[i])) {
@@ -14,9 +17,15 @@ function DisplayWord({puzzle, guessedLetters}) {
     document.getElementById('input-field').hidden = true
     document.getElementById('submit-button').hidden = true
     document.getElementById('play-again').hidden = false
+    celebrate = true
   }
 
-  return <h2>{displayedWord}</h2>
+  return (
+    <div>
+      <h2>{displayedWord}</h2>
+      {celebrate && <Confetti />}    
+    </div>
+  )
 }
 
 export default DisplayWord
