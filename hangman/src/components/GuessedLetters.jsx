@@ -1,5 +1,3 @@
-import {useState, useEffect} from 'react'
-
 function GuessedLetters({puzzle, guessedLetters}) {
   let lives = 6
   

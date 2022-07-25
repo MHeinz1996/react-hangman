@@ -9,7 +9,7 @@ function DisplayWord({puzzle, guessedLetters}) {
     }
   }
   
-  if(!displayedWord.includes('_ ')) {
+  if(!displayedWord.includes('_ ') && displayedWord.length > 0) {
     alert("Congrats! You guessed the word correctly!")
     document.getElementById('input-field').hidden = true
     document.getElementById('submit-button').hidden = true

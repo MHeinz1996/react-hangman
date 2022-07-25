@@ -1,15 +1,27 @@
-import { useState } from 'react'
 import './App.css'
-import WordList from './data/words'
+import { useState, useEffect } from 'react'
 import Input from './components/Input'
 import SubmitButton from './components/SubmitButton'
 import DisplayWord from './components/DisplayWord'
 import GuessedLetters from './components/GuessedLetters'
 import PlayAgain from './components/PlayAgain'
+import axios from 'axios'
 
 function App() {
-  const [puzzle, setPuzzle] = useState(WordList[(Math.floor(Math.random() * WordList.length))])
+  const [puzzle, setPuzzle] = useState('')
   const [guessedLetters, setGuessedLetters] = useState([])
+
+  const getPuzzle = async () => {
+    try {
+      const response = await axios.get('https://random-word-api.herokuapp.com/word')
+      setPuzzle(response.data[0])
+    } catch(error) {
+        console.log(error)
+    }
+  }
+
+  // setPuzzle on mount
+  useEffect(() => {getPuzzle()}, [])
 
   return (
     <div className="App">
