@@ -13,6 +13,7 @@ function DisplayWord({puzzle, guessedLetters}) {
     alert("Congrats! You guessed the word correctly!")
     document.getElementById('input-field').hidden = true
     document.getElementById('submit-button').hidden = true
+    document.getElementById('play-again').hidden = false
   }
 
   return <h2>{displayedWord}</h2>
